@@ -11,3 +11,10 @@ name = "python"
 
 [[analyzers]]
 name = "docker"
+
+  [analyzers.meta]
+  dockerfile_paths = ["./"]
+
+[[analyzers]]
+name = "secrets"
+

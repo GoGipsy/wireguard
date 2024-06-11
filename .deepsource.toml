@@ -17,3 +17,4 @@ name = "docker"
 
 [[analyzers]]
 name = "secrets"
+

@@ -26,7 +26,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
         # Add support for more platforms with QEMU (optional)
         # https://github.com/docker/setup-qemu-action
@@ -65,7 +65,7 @@ jobs:
       # https://github.com/docker/build-push-action
       - name: Build and push Docker image
         id: build-and-push
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: ./
           platforms: linux/amd64,linux/arm64
@@ -80,7 +80,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           ref: latest
 
@@ -90,7 +90,7 @@ jobs:
           git reset --hard dev
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           branch: dev
 
